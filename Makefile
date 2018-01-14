@@ -6,4 +6,4 @@ hello: hello.c
 
 clean:
 	rm -f *~
-	rm hello
+	rm -f hello
