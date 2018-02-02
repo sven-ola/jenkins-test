@@ -2,6 +2,7 @@ FROM ubuntu:xenial
 
 RUN apt-get update && apt-get install -y \
     	awscli \
+    	make \
 		gcc-arm-linux-gnueabihf \
 		openjdk-8-jdk && \
 	apt-get clean
