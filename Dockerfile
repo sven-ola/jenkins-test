@@ -10,7 +10,9 @@ RUN apt-get update && apt-get install -y \
 ARG AWS_ACCESS_KEY_ID=AKIAIDKKDPCIU3OPGHCA
 ARG AWS_SECRET_ACCESS_KEY=
 
-RUN aws s3 cp s3://n4-cd-n4os-storage/linux_build.tar.gz /tmp/ && \
+RUN set -x && \
+	id && \
+	aws s3 cp s3://n4-cd-n4os-storage/linux_build.tar.gz /tmp/ && \
 	mkdir -p /opt/sysroot && \
 	tar --directory=/opt/sysroot -xvf /tmp/linux_build.tar.gz && \
 	rm -f /tmp/linux_build.tar.gz
